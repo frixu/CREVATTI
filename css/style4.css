@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap');
+
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    overflow-x: hidden;
+}
+header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:10vh;
+    background-color: #D9D9D9;
+    min-height: 92px;
+}
+main{
+    height: 90vh;
+    width: 100vw;
+    background-color: black;
+}
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 67%;
+    height: 100%;
+    background-color: white;
+    float: left;
+    flex-direction: column;
+}
+#grad {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 33%;
+    background: linear-gradient(100deg,white,white 50%,rgba(255, 255, 255, 0) 50%,rgba(255, 255, 255, 0) 100%);
+    height: 100%;
+    float: left;
+}
+img {
+    width: 100%;
+    height: 100%;
+    float: left;
+}
+#side {
+    float: left;
+    height: 100%;
+    width: 33%;
+    position: relative;
+}
+
+ul {
+    height: 100%;
+    position: relative;
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+li {
+    position: relative;
+    display: inline;
+}
+#buttons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+#oferta {
+    color: white;
+    text-decoration: none;
+    padding: 15px 50px 15px 50px;
+    background-color: #B86BCB;
+}
+#dsw {
+    text-decoration: none;
+    padding: 15px 25px 15px 25px;
+    background-color: #D9D9D9;
+}
+h1 {
+    font-size: 128px;
+    letter-spacing: 21px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 100;
+}
+#head {
+    padding-left:15px ;
+    width:100%;
+    height: 33%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+#head p {
+    font-size: 32px;
+    font-family: 'Inter';
+    font-weight: 600;
+    letter-spacing: 2px;
+    width: 760px;
+}
+#act {
+    width: 100%;
+    height: 66%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+#desc {
+    font-size: 64px;
+    font-family: arial;
+}
+a {
+    text-decoration: none;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 32px;
+}
+nav {
+    display: none;
+}
+#drop {
+    /*Ten checkbox ma aktywować dropdown menu kiedy jest kliknięty */
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin-right: 20px;
+    width: 20px;
+    height: 20px;
+}
+#mod {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    bottom: 0%;
+    position: absolute;
+    height: 180px;
+    width: 90px;
+    float: left;
+}
+#dark-mode {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    border: none;
+}
+#plus {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    border: none;
+}
+#minus {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    border: none;
+}
+#cont {
+    display: none;
+}
+#plus:hover, #dark-mode:hover, #minus:hover {
+    cursor: pointer;
+}
+#forma {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    float: left;
+    flex-direction: column;
+}
+form {
+    width: 1010px;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: space-between;
+}
+#forma select, input{
+    border: none;
+    border-radius: 10px;
+    font-family: arial;
+    background-color: #D9D9D9;
+    font-size: 24px;
+    width: 505px;
+    height: 73px;
+}
+textarea {
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    font-family: arial;
+    background-color: #D9D9D9;
+    width: 505px;
+    height: 159px;
+}
+#pods {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    height: 100%;
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+#lista {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#dodatki {
+    font-family:Arial;
+    
+}
+#cena {
+    width: 100%;
+    height:33%;
+    min-height: 180px;
+}
+p {
+    font-size: 24px;
+    font-family: arial;
+}
+hr {
+    border: 2px solid #444444;
+    border-radius: 5px;
+}
+.hed {
+    color: #444444;
+    font-weight: 500;
+}
+#sum, #pok {
+    font-size: 40px;
+}
+input[type=submit] {
+    border-radius: 0%;
+    width: 363px;
+    height: 80px;
+    background-color: #B86BCB;
+    color: white;
+}
+
+
+@media screen and (max-width:1400px) {
+    #side {
+        display: none;
+    }
+    section {
+        width: 100%;
+    }
+    
+}
+@media screen and (max-height: 700px),(max-width:750px){
+    #buttons {
+        flex-direction: column;
+        justify-content: space-between;
+        width: 200px;
+    }
+    #oferta {
+        text-align: center;
+        margin-bottom: 20px;
+        width: 500px;
+    }
+    #dsw{
+        text-align: center;
+        width: 500px;
+    }
+    article {
+        height: 100%;
+    }
+    #desc {
+        font-size: 32px;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    ul {
+        display: none;
+    }
+    li {
+        display: list-item;
+    }
+    nav {
+        display: block;
+    }
+    /*#cont {
+        display: flex;
+        width: 100%;
+        height: 500%;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        left: 0%;
+        right: 0;
+        top: 0;
+        bottom: 0%;
+        align-items: center;
+    }*/
+    nav #cont a {
+        background-color: #D9D9D9;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-items: center;
+        padding: 25px 0 25px 0;
+    }
+    nav #cont div {
+        width: 100%;
+        height: 100%;
+        background-color: #D9D9D9;
+        padding: 25px 0 25px 0;
+
+    }
+    #drop {
+        display: inline-block;
+    }
+    #mod {
+        top: 0;
+        width: 100%;
+        flex-direction: row;
+        height: 90px;
+    }
+    #dark-mode,#plus,#minus {
+        border: 1px solid black;
+    }
+    input[type=submit]{
+        height: 60px;
+    }
+    h1 {
+        display: none;
+    }
+    #head {
+        height: 15%;
+    }
+}
+@media screen and (max-width:1050px),(max-height:865px){
+    #forma select,input[type=date],textarea {
+        width: 100%;
+        font-size: 16px;
+        height: 55px;
+    }
+    textarea {
+        height: 159px;
+    }
+    #desc {
+        font-size: 32px;
+    }
+    #head p {
+        font-size: 16px;
+        width: 100%;
+    }
+    #head h1 {
+        font-size: 64px;
+    }
+    #head {
+        justify-content: space-around;
+    }
+    form {
+        width: 758px;
+    }
+}
+@media screen and (max-width:810px){
+    form {
+        width:100%;
+    }
+    input[type=submit]{
+        width: 100%;
+    }
+}
+@media screen and (max-width:505px){
+    #oferta {
+        width: 300px;
+    }
+    #dsw {
+        width: 300px;
+    }
+    h1 {
+        font-size: 32px;
+        font-weight: 600;
+    }
+    #desc {
+        font-size: 24px;
+    }
+}
+@media screen and (max-width:320px){
+    #oferta, #dsw {
+        width: 150px;
+    }
+}
+@media screen and (max-width:750px),(max-height:700px){
+    #forma select,textarea,input[type=date]{
+        width: 100%;
+    }
+
+    #forma {
+        width: 80%;
+    }
+    #pods {
+        width: 80%;
+    }
+    textarea {
+        height: 159px;
+    }
+    section {
+        justify-content: space-between;
+    }
+    form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
