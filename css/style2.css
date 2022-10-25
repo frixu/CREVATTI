@@ -19,6 +19,7 @@ main{
     height: 90vh;
     width: 100vw;
     background-color: black;
+    position: relative;
 }
 section {
     display: flex;
