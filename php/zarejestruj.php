@@ -10,56 +10,57 @@ $osoba = array(
         'email' => filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)
         );
 
+class Rejestracja {
+
+    public $niepowodzenie = false;
+    public $bledy = array();
+
+    function error($str) {
+        array_push($this->bledy, $str);
+        $this->niepowodzenie = true;
+    }
+    
+}
+
 foreach ($osoba as $x => $value) {
     $osoba[$x] = htmlentities(trim($value));
 }
 
-$niepowodzenie = false;
-$bledy = array();
+$rejestracja = new Rejestracja();
 
 foreach ($osoba as $x => $value) {
     if (empty($value) || $value == "") {
-        array_push($bledy, "{$x} nie został wprowadzony");
-        $niepowodzenie = true;  
+        $rejestracja->error("{$x} nie został wprowadzony");
+        // array_push($rejestracja->bledy, "{$x} nie został wprowadzony");
     }
 }
 
-if ($osoba[$haslo] != $osoba[$haslo2]) {
-    array_push($bledy, "Hasła się ze sobą nie zgadzają");
-    $niepowodzenie = true;
-}
+if (strlen($osoba['email']) > 32) 
+    $rejestracja->error("Login powinien nie zawierać wiecej znaków niż 16");
+    
+if ($osoba['haslo'] != $osoba['haslo2']) 
+    $rejestracja->error("Hasła się ze sobą nie zgadzają");
 
-if (!checkemail($osoba['email'])) {
-    array_push($bledy, "Podano niepoprawny adres email");
-    $niepowodzenie = true;
-}
+if (!checkemail($osoba['email'])) 
+    $rejestracja->error("Podano niepoprawny adres email");
 
-if (strlen($osoba['login']) > 16) {
-    array_push($bledy, "Login powinien nie zawierać wiecej znaków niż 16");
-    $niepowodzenie = true;
-}
+if (strlen($osoba['login']) > 16) 
+    $rejestracja->error("Login powinien nie zawierać wiecej znaków niż 16");
 
-if (strlen($osoba['email']) > 32) {
-    array_push($bledy, "Login powinien nie zawierać wiecej znaków niż 16");
-    $niepowodzenie = true;
-}
+if (strlen($osoba['haslo']) > 32) 
+    $rejestracja->error("Haslo nie powinno zawierać wiecej znaków niż 32");
 
-if (strlen($osoba['haslo']) > 32) {
-    array_push($bledy, "Haslo nie powinno zawierać wiecej znaków niż 32");
-    $niepowodzenie = true;
-}
 
-if ($niepowodzenie == true) {
+if ($rejestracja->niepowodzenie == true) {
     echo "Logowanie się nie powiodło..";
-} else if ($niepowodzenie == false) {
+} else if ($rejestracja->niepowodzenie == false) {
     echo "Logowanie się powiodło";
-
-    $query = $conn->prepare('INSERT INTO osoba VALUES ()')
+    // $query = $conn->prepare('INSERT INTO osoba VALUES ()');
 }
 
 echo "<br><br>";
 
-foreach ($bledy as $blad) {
+foreach ($rejestracja->bledy as $blad) {
     echo "$blad <br>";
 }
 echo "<br>";
@@ -68,7 +69,6 @@ echo "Zmienne post: <br>";
 foreach ($osoba as $x => $value) {
     echo $x . ": " . $value . "<br>";
 }
-
 
 function removeSpecialChar($str) {
     $result = preg_replace('/[^a-zA-Z0-9_ -]/s','', $str);
