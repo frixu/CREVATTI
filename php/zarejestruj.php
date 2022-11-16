@@ -36,7 +36,7 @@ foreach ($osoba as $x => $value) {
 }
 
 if (strlen($osoba['email']) > 32) 
-    $rejestracja->error("Login powinien nie zawierać wiecej znaków niż 16");
+    $rejestracja->error("Login powinien nie zawierać wiecej znaków niż 32");
     
 if ($osoba['haslo'] != $osoba['haslo2']) 
     $rejestracja->error("Hasła się ze sobą nie zgadzają");
